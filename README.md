@@ -1,6 +1,34 @@
 # LM
 Language Model 
+# The "SOTA-LLM" Repository Structure
 
+```
+/sota-llm
+├── /configs                # Hyperparameters for different sizes (7B, 1B, etc.)
+│   ├── base_config.yaml
+│   └── chat_config.yaml
+├── /data                   # Data processing and streaming
+│   ├── tokenizer.py        # BPE/SentencePiece wrappers
+│   └── dataset.py          # Streaming & Masked SFT loaders
+├── /model                  # Core Architecture
+│   ├── __init__.py
+│   ├── transformer.py      # RoPE, GQA, SwiGLU blocks
+│   ├── attention.py        # Grouped Query Attention logic
+│   └── kv_cache.py         # Inference memory management
+├── /scripts                # Entry points for execution
+│   ├── pretrain.py         # Large-scale unsupervised training
+│   ├── sft.py              # Instruction fine-tuning
+│   ├── dpo.py              # Preference optimization (RLHF)
+│   └── quantize.py         # GGUF/INT4 conversion script
+├── /utils                  # Helper functions
+│   ├── checkpointing.py    # Save/Load logic for BF16 weights
+│   ├── distributed.py      # FSDP/Multi-GPU setup
+│   └── logger.py           # Weights & Biases (W&B) integration
+├── /mcp_server             # Model Context Protocol integration
+│   └── server.py           # Exposes LLM as an MCP tool
+├── requirements.txt        # PyTorch, Transformers, Flash-Attention
+└── README.md               # Architecture overview and setup guide
+```
 
 # How to Run The New LLM System
 ```
