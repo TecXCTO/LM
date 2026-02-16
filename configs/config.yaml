@@ -1,0 +1,24 @@
+# SOTA 2026 Hyperparameters for 1M Context Recursive LLM
+hyper_config = {
+    "model_dim": 2048,
+    "n_heads": 32,
+    "max_depth": 16,             # Maximum reasoning/recursion steps
+    "max_context_len": 1048576,  # 2^20 (1M tokens)
+    
+    # Large Context Optimizations
+    "attention_type": "infini",  # Compressive Memory + Dot Product
+    "checkpoint_layers": True,   # Trading compute for VRAM (save gradients)
+    "ring_attention_size": 8,    # Shard sequence across 8 GPUs
+    
+    # Training Dynamics
+    "learning_rate": 1.5e-4,     # Lower for stability in recursive loops
+    "warmup_steps": 2000,
+    "lr_scheduler": "cosine",
+    "weight_decay": 0.1,
+    "mixed_precision": "bf16",    # Mandatory for 2026 hardware efficiency
+    
+    # Data Strategy
+    "segment_size": 2048,        # Segment length for Infini-attention memory updates
+    "batch_size_per_gpu": 1,     # Small batch, high micro-steps for massive context
+    "gradient_accumulation": 32
+}
