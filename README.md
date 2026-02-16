@@ -51,3 +51,9 @@ Speed: KV-Caching & 4-bit Quantization.
 Intelligence: SFT & DPO (RLHF) training loops.
 Scale: Streaming Data Pipelines & BF16 Mixed Precision.
 ```
+# Critical Next Steps for the Repo
+```
+Environment Setup: Ensure you install FlashAttention-3 to get a 3x speedup on modern NVIDIA GPUs.
+Versioning: Use Hugging Face Hub to version your model weights during training so you never lose progress.
+Deployment: Use the FastAPI framework within your /mcp_server directory to turn your LLM into a Serverless-ready API.
+```
