@@ -1,3 +1,5 @@
+# The_RLHF_via_Direct_Preference_Optimization
+
 def dpo_loss(beta, policy_chosen_logps, policy_rejected_logps, reference_chosen_logps, reference_rejected_logps):
     """
     Direct Preference Optimization Loss.
