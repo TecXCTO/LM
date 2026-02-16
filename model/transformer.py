@@ -1,3 +1,6 @@
+# The_Modern_LLM_Backbone.py
+
+
 '''
 This is a professional-grade implementation of a modern Decoder-only Transformer block.
 I have integrated 2025/2026 industry standards: RoPE (Rotary Positional Embeddings), RMSNorm,
