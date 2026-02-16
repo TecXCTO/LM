@@ -1,3 +1,5 @@
+# The_SFT_Trainer
+
 def sft_loss_fn(logits, labels, tokenizer):
     """Calculates loss only on Assistant responses, ignoring User prompts."""
     # Create mask: 1 for assistant tokens, 0 for user/padding
