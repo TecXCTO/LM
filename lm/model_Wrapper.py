@@ -1,4 +1,7 @@
 # The Full LLM System Wrapper
+
+import torch.nn as nn
+
 class CustomLLM(nn.Module):
     """
     The complete LLM architecture: 
