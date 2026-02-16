@@ -1,0 +1,28 @@
+# --- Core Deep Learning Framework ---
+torch>=2.5.1
+torchvision
+torchaudio
+--extra-index-url https://download.pytorch.org
+
+# --- SOTA Attention & Performance ---
+flash-attn>=2.7.0  # Required for FlashAttention-3 support
+triton>=3.1.0      # For custom recursive kernel operations
+xformers>=0.0.28   # Memory-efficient building blocks
+
+# --- Distributed Training & Scaling ---
+deepspeed>=0.15.4  # Stage 3 ZeRO sharding for 1M context
+accelerate>=1.1.0  # Easy multi-GPU/TPU orchestration
+bitsandbytes>=0.44.1 # For 4-bit/8-bit quantization if VRAM is low
+
+# --- Data & Tokenization ---
+transformers>=4.46.0
+datasets>=3.1.0
+tiktoken>=0.8.0     # High-speed BPE for long context
+einops>=0.8.0       # Essential for complex recursive tensor reshaping
+
+# --- Monitoring & DevOps ---
+wandb               # Tracking loss and halting probability
+tqdm                # Progress bars for 1M token streaming
+pyyaml              # Configuration management
+fastapi             # For deploying your model as an MCP server
+uvicorn             # High-performance ASGI server
